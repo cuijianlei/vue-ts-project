@@ -8,7 +8,7 @@ interface LoginReqArguIterface {
 
 export const loginReq = (data: LoginReqArguIterface): AxiosPromise<ResponseData> => {
   return axios.request({
-    url: '/api/user/login',
+    url: '/user/login',
     data,
     method: 'POST',
   });

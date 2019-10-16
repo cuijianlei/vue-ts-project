@@ -17,9 +17,9 @@ import { loginReq } from '@/api/user';
 })
 export default class Home extends Vue {
   public mounted() {
-    loginReq({user_name: 'Lison', password: 123}).then((res) => {
-      console.log(res.data.code);
-    });
+    // loginReq({user_name: 'Lison', password: 123}).then((res) => {
+    //   console.log(res.data.code);
+    // });
   }
 }
 </script>
