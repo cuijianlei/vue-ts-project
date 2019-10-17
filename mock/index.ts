@@ -42,5 +42,5 @@ function getInfoRes(req: PostResInterface) {
     user_name: 'Lison',
     avatar: '',
     email: 'xxx@xx.com',
-  })
+  });
 }

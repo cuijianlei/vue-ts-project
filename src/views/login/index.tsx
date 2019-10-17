@@ -1,4 +1,5 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Emit, Prop, Watch } from 'vue-property-decorator';
+import { State, Action } from 'vuex-class';
 import Cookies from 'js-cookie';
 import { loginReq } from '@/api/user';
 
@@ -8,17 +9,19 @@ export default class LoginPage extends Vue {
   public user_name: string = '';
   public password: string | number = '';
 
+  @Action('loginActions') public loginAction;
+
   public login() {
-    loginReq({user_name: this.user_name, password: this.password}).then((res) => {
-      const { data: {code, msg}} = res;
-      console.log(code);
-      if (code === 0) {
-        Cookies.set('token', 'value');
+    this.loginAction({user_name: this.user_name, password: this.password}).then((res) => {
+      // const { data: {code, msg}} = res;
+      // console.log(code);
+      // if (code === 0) {
+      //   Cookies.set('token', 'value');
 
         this.$router.push('/home');
-      } else {
-        console.error(msg);
-      }
+      // } else {
+      //   console.error(msg);
+      // }
     });
   }
 

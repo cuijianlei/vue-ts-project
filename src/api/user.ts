@@ -13,3 +13,15 @@ export const loginReq = (data: LoginReqArguIterface): AxiosPromise<ResponseData>
     method: 'POST',
   });
 };
+
+interface GetInfoReqArguInterface {
+  user_id: string;
+}
+
+export const getInfoReq = (data: GetInfoReqArguInterface): AxiosPromise<ResponseData> => {
+  return axios.request({
+    url: '/api/user/get_info',
+    data,
+    method: 'POST',
+  });
+};
